@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Poppins", "sans-serif";
+        color: #ffffff;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@layer components {
+ .menu-item {
+    @apply text-xs md:text-sm font-normal text-white relative cursor-pointer after:content-[''] after:w-full after:bg-primary after:h-[3px] after:absolute after:left-0 after:-bottom-2 after:rounded after:-translate-x-11 after:opacity-0 after:transition-all after:hover:translate-x-0 after:hover:opacity-100;
+ }
+
+ .ui-circle {
+    @apply w-[130px] h-[130px] md:w-[180px] md:h-[180px] origin-top-left rotate-[-36.39deg] rounded-[117px] border-b-2 border-sky-500;
+ }
+
+ .primary-btn {
+    @apply h-9 md:h-11 bg-primary text-white text-sm px-6 rounded border border-primary hover:bg-transparent hover:text-primary;
+ }
+
+ .input-box {
+   @apply bg-gradient-to-br from-blue-950 to-slate-900 rounded border border-blue-800/40 px-4 py-3 placeholder:text-slate-400 placeholder:text-sm mb-5 focus:outline-none focus:border-cyan-500 focus:border-2;
+ }
+
+ .hero-img {
+    @apply w-[120px] h-[120px] md:w-[139px] bg-gray-800 rounded-full
+ }
+
+ 
+ 
+ @keyframes rotateRing {
+   0% {
+     transform: translate(-50%, -50%) rotate(0deg);
+   }
+   100% {
+     transform: translate(-50%, -50%) rotate(360deg);
+   }
+ }
+ 
+ @keyframes moveSaturn {
+   0% {
+     transform: translateX(-10%);
+   }
+   50% {
+     transform: translateX(100vw) translateY(10%);
+   }
+   100% {
+     transform: translateX(-10%);
+   }
+ }
+ 
+ .planet-saturn {
+   position: absolute;
+   top: 30%;
+   left: -15%;
+   width: 250px; 
+   height: 250px; 
+   background-color: #f5a623;
+   border-radius: 50%;
+   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+   animation: moveSaturn 15s linear infinite;
+ }
+ 
+ .planet-saturn::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 400px; 
+   height: 80px; 
+   background-color: rgba(200, 200, 200, 0.2);
+   border: 5px solid rgba(255, 255, 255, 0.5);
+   border-radius: 50%;
+   transform: translate(-50%, -50%);
+   z-index: -1;
+   animation: rotateRing 10s linear infinite; 
+ }
+
+ @keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes orbitReverse {
+  0% {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(200px) rotate(360deg);
+  }
+}
+
+.kerikil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+}
+
+.kerikil-orbit-1 {
+  animation: orbit 5s linear infinite;
+}
+
+.kerikil-orbit-2 {
+  animation: orbitReverse 7s linear infinite;
+}
+
+
+
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid white;
+  transform: rotate(35deg);
+  opacity: 0.7;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star::before,
+.star::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid white;
+  top: -7px;
+  left: -5px;
+  transform: rotate(-35deg);
+}
+
+.star::after {
+  transform: rotate(70deg);
+}
+}
