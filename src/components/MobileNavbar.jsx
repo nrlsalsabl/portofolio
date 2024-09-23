@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react";
 
 const MobileNavbar =({ isOpen, setIsMenuOpen}) => {
 
@@ -18,7 +18,7 @@ const MobileNavbar =({ isOpen, setIsMenuOpen}) => {
                 </li>
 
                 <li className="mb-5">
-                    <a className="menu-item" onClick={() => handleScroll("skill")}>Skills</a>
+                    <a className="menu-item" onClick={() => handleScroll("skills")}>Skills</a>
                 </li>
 
                 <li className="mb-5">
@@ -26,7 +26,7 @@ const MobileNavbar =({ isOpen, setIsMenuOpen}) => {
                 </li>
 
                 <li className="mb-5">
-                    <a className="menu-item" onClick={() => handleScroll("about")}>About Me</a>
+                    <a className="menu-item" onClick={() => handleScroll("project")}>Projects</a>
                 </li>
             </ul>
 
@@ -38,7 +38,7 @@ const MobileNavbar =({ isOpen, setIsMenuOpen}) => {
             onClick={() => {
                 setIsMenuOpen(false);
             }}
-            className="w-screen h-screen bg-overlayBg fixed top-0 -z-0" />
+            className="w-screen h-screen bg-overlayBg fixed top-0 -z-10" />
     </div>
     );
 };

@@ -5,7 +5,8 @@ import PROFILE_PIC from "../assets/blue.png";
 import { FiMail } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineBadge } from "react-icons/md";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdAddTask } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Hero =() => {
 
@@ -14,15 +15,16 @@ const Hero =() => {
         tagLine,
         jobTitle,
         yearsOfExperience,
+        projects,
         location,
         email, 
         skills,
     } = PROFILE_DATA;
 
     
-    
     const texts = [
-        "Fullstack Developer",
+        "FrontEnd Developer",
+        "BackEnd Developer",
         "Mobile Apps Developer",
       ];
     
@@ -113,6 +115,11 @@ const Hero =() => {
                     text={`${yearsOfExperience} Years of Experience`}
                 />
 
+                <InfoTile
+                    icon={<MdAddTask size={20} className="text-sky-400" />}
+                    text={`${projects} Projects`}
+                />
+
                 <div className="flex items-center gap-2 flex-wrap my-3">
                     {skills.map((item) => (
                         <div key={item} className="text-[11px] bg-blue-300/30 rounded md:text-xs px-3 py-1">
@@ -122,13 +129,23 @@ const Hero =() => {
                 </div>
 
                 <div className="flex items-center gap-2 flex-wrap">
-                    <div className=" bg-blue-800/30 p-2 rounded">
-                        <FaGithub className="text-lg md:text-xl" />
-                    </div>
+                    <a href="https://github.com/nrlsalsabl" target="_blank" rel="noopener noreferrer">
+                        <div className="bg-blue-800/30 p-2 rounded">
+                            <FaGithub className="text-lg md:text-xl" />
+                        </div>
+                    </a>
 
-                    <div className=" bg-blue-800/30 p-2 rounded">
-                        <FaLinkedin className="text-lg md:text-xl" />
-                    </div>
+                    <a href="https://www.linkedin.com/in/nurul-salsabila-754a68221/" target="_blank" rel="noopener noreferrer">
+                        <div className="bg-blue-800/30 p-2 rounded">
+                            <FaLinkedin className="text-lg md:text-xl" />
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/salsqbla_" target="_blank" rel="noopener noreferrer">
+                        <div className="bg-blue-800/30 p-2 rounded">
+                            <FaInstagram className="text-lg md:text-xl" />
+                        </div>
+                    </a>
                 </div>
 
                 </div>

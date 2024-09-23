@@ -30,7 +30,11 @@ const Navbar =() => {
                     </li>
 
                     <li>
-                        <Link to="about" smooth spy offset={-80} className="menu-item">About Me</Link>
+                        <Link to="experience" smooth spy offset={-80} className="menu-item">Work Experience</Link>
+                    </li>
+
+                    <li>
+                        <Link to="project" smooth spy offset={-80} className="menu-item">Project</Link>
                     </li>
 
                     <li>

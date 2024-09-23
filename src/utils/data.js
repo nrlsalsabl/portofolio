@@ -9,6 +9,8 @@ import {
  import { SiFlutter } from "react-icons/si";
  import { SiBootstrap } from "react-icons/si";
  import { SiPhp } from "react-icons/si";
+ import { SiOdoo } from "react-icons/si";
+ import { SiWordpress } from "react-icons/si";
 
 export const PROFILE_DATA = {
     profilePicture: "https://via.placeholder.com/150",
@@ -17,6 +19,7 @@ export const PROFILE_DATA = {
     jobTitle: "Developer",
     location: "Indonesia",
     yearsOfExperience: 2,
+    projects: "7+",
     skills: [
         "React.js",
         "JavaScript",
@@ -28,6 +31,11 @@ export const PROFILE_DATA = {
         "Tailwindcss",
         "Laravel",
         "Flutter",
+        "WordPress",
+        "cpanel",
+        "Google Analytics",
+        "Google Search Console",
+        "Google Adsense",
     ],
     email: "nrlsalsqbla@gmail.com",
     phone: "+62 81212369677",
@@ -150,6 +158,72 @@ export const WORK_EXPERIENCE = [
     },
 ];
 
+
+export const PROJECTS = [
+    {
+        id: "01",
+        icon: RiTailwindCssFill,
+        icon2: SiLaravel, 
+        icon3: SiBootstrap,
+        image: "src/assets/projects/yri.png",
+        title: "Youth Ranger Indonesia Web",
+        comment: "This project involves redesigning and rebuilding the front end of a website using Laravel and Tailwind CSS. The goal is to enhance the user interface and user experience by leveraging Laravel’s robust framework and Tailwind CSS’s utility-first approach to styling. This project aims to create a modern, responsive, and visually appealing website that meets current web standards and user expectations.",
+        url: "https://youthrangerindonesia.com/",
+    },
+    {
+        id: "02",
+        icon: SiOdoo,
+        image: "src/assets/projects/forlawtous.png",
+        title: "Forlawtous Landing Page",
+        comment: "Landing page creation project for a startup using Odoo. Integrating responsive design and intuitive functionality to attract visitors and promote services effectively.",
+        url: "https://forlawtous.odoo.com/home",
+    },
+    {
+        id: "03",
+        icon: RiTailwindCssFill,
+        icon2: SiLaravel,
+        image: "src/assets/projects/jawa.png",
+        title: "Website Articles",
+        comment: "A dedicated website creation project for uploading articles, built with Laravel and Tailwind CSS. Featuring a clean and responsive interface, as well as content management features that make it easy for users to share and manage articles efficiently.",
+        url: "https://jelajahjawa.fypmedia.id/",
+    },
+    {
+        id: "04",
+        icon: RiTailwindCssFill,
+        icon2: SiLaravel,
+        image: "src/assets/projects/sumatera.jpeg",
+        title: "Website Articles",
+        comment: "A dedicated website creation project for uploading articles, built with Laravel and Tailwind CSS. Featuring a clean and responsive interface, as well as content management features that make it easy for users to share and manage articles efficiently.",
+        url: "https://andalasnews.fypmedia.id/",
+    }, 
+    {
+        id: "05",
+        icon: RiTailwindCssFill,
+        icon2: SiLaravel,
+        image: "src/assets/projects/sulawesi.png",
+        title: "Website Articles",
+        comment: "A dedicated website creation project for uploading articles, built with Laravel and Tailwind CSS. Featuring a clean and responsive interface, as well as content management features that make it easy for users to share and manage articles efficiently.",
+        url: "https://timurinfo.fypmedia.id/",
+    },
+    {
+        id: "06",
+        icon: RiTailwindCssFill,
+        icon2: SiLaravel,
+        image: "src/assets/projects/fypmedia.jpeg",
+        title: "Website Articles",
+        comment: "A dedicated website creation project for uploading articles, built with Laravel and Tailwind CSS. Featuring a clean and responsive interface, as well as content management features that make it easy for users to share and manage articles efficiently.",
+        url: "https://borneonews.fypmedia.id/",
+    },
+    {
+        id: "07",
+        icon: SiWordpress,
+        image: "src/assets/projects/fypmedia.jpeg",
+        title: "FYP Media Web",
+        comment: "Corporate profile website development project in the media, agency and news sector. Creating a platform that showcases services and portfolios with professional design, and interactive features to increase visitor engagement and strengthen the brand.",
+        url: "https://fypmedia.id/",
+    },
+];
+
 export const ABOUT_ME_DATA = {
     introduction: "nama ku adalah nurulsalsabila yang selalu tertarik di bidang web developer dan mobile developer. untuk itu jangan ragu untuk mengunjungi profile saya disini. terima kasih",
     background: "background saya adalah anak cantik, baik dan pintar dari jurusan teknik informatika",
@@ -163,4 +237,5 @@ export const ABOUT_ME_DATA = {
         numberOfProjects: 7,
         certificationEarned: 3,
     },
+
 };

@@ -36,6 +36,14 @@
     @apply w-[120px] h-[120px] md:w-[139px] bg-gray-800 rounded-full
  }
 
+ .project-img {
+  width: 120%; 
+  height: 185px; 
+  object-fit: cover; 
+  border-radius: 15;
+}
+
+
  
  
  @keyframes rotateRing {
