@@ -8,7 +8,6 @@ import { MdOutlineBadge } from "react-icons/md";
 import { MdAddTask } from "react-icons/md";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-
 const Hero =() => {
 
     const {
@@ -29,32 +28,32 @@ const Hero =() => {
         "Mobile Apps Developer",
       ];
     
-        const [currentText, setCurrentText] = useState("");
-        const [currentTextIndex, setCurrentTextIndex] = useState(0);
-        const [charIndex, setCharIndex] = useState(0);
-        const [isDeleting, setIsDeleting] = useState(false);
-      
-        useEffect(() => {
-          const currentFullText = texts[currentTextIndex];
-          const typingSpeed = isDeleting ? 50 : 100;
-      
-          const timeout = setTimeout(() => {
-            setCurrentText((prevText) =>
-              isDeleting
-                ? currentFullText.substring(0, prevText.length - 1)
-                : currentFullText.substring(0, prevText.length + 1)
-            );
-      
-            if (!isDeleting && currentText === currentFullText) {
-              setTimeout(() => setIsDeleting(true), 1000);
-            } else if (isDeleting && currentText === "") {
-              setIsDeleting(false);
-              setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-            }
-          }, typingSpeed);
-      
-          return () => clearTimeout(timeout);
-        }, [currentText, isDeleting, currentTextIndex, texts]);
+      const [currentText, setCurrentText] = useState("");
+      const [currentTextIndex, setCurrentTextIndex] = useState(0);
+      const [charIndex, setCharIndex] = useState(0);
+      const [isDeleting, setIsDeleting] = useState(false);
+    
+      useEffect(() => {
+        const currentFullText = texts[currentTextIndex];
+        const typingSpeed = isDeleting ? 50 : 100; 
+    
+        const timeout = setTimeout(() => {
+          setCurrentText((prevText) =>
+            isDeleting
+              ? currentFullText.substring(0, prevText.length - 1)
+              : currentFullText.substring(0, prevText.length + 1)
+          );
+    
+          if (!isDeleting && currentText === currentFullText) {
+            setTimeout(() => setIsDeleting(true), 1000);
+          } else if (isDeleting && currentText === "") {
+            setIsDeleting(false);
+            setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+          }
+        }, typingSpeed);
+    
+        return () => clearTimeout(timeout);
+      }, [currentText, isDeleting, currentTextIndex, texts]);
 
 
     return (
@@ -80,13 +79,10 @@ const Hero =() => {
 
 
         <div className="flex-1 text-center md:text-left z-[1]">
-                
-        <div className="relative flex items-center justify-center h-10">
-            <span className="block min-h-10 h-10 text-sm md:text-base text-blue-200 font-normal overflow-hidden">
-            {currentText}
-            </span>
-        </div>
-
+        <span className="text-sm md:text-base text-blue-200 font-normal">
+          {currentText}
+        </span>
+        
         <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
         <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">
           {tagLine}
@@ -171,4 +167,4 @@ const InfoTile = ({icon, text}) =>{
     );
 };
 
-export default Hero;
+export default Hero
