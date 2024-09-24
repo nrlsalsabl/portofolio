@@ -78,23 +78,20 @@ const Hero =() => {
         </div>
 
 
-        <div className="flex-1 z-[1]">
-  <div className="flex items-center justify-start md:justify-center h-[50px]">
-    <span
-      className={`text-sm md:text-base text-blue-200 font-normal transition-opacity duration-300 ease-in-out`}
-      style={{ opacity: currentText ? 1 : 0 }} // Menggunakan opasitas untuk efek muncul
-    >
-      {currentText}
-    </span>
-  </div>
+        <div className="flex-1 text-center md:text-left z-[1]">
+        <div className="text-container">
+            <span className="text-sm md:text-base text-blue-200 font-normal">
+                {currentText}
+            </span>
+        </div>
 
-  <h2 className="text-3xl mt-3 md:text-5xl md:mt-5 text-left md:text-center">{name} 👋</h2>
-  <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8 text-left md:text-center">
-    {tagLine}
-  </p>
-  <button className="primary-btn">Contact Me</button>
-</div>
 
+        <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
+        <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">
+          {tagLine}
+        </p>
+        <button className="primary-btn">Contact Me</button>
+      </div>
 
 
             <div className="flex gap-2 justify-center md:gap-3 lg:gap-5 z-[1]">
