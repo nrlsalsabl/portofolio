@@ -59,12 +59,32 @@ const Hero =() => {
     return (
         <section className="max-w-screen-xl flex flex-col gap-14 md:flex-row md:items-center pt-16 md:pt-28 pb-20 px-6 mx-auto" id="hero">
 
+
+        <div className="star" style={{ top: '10%', left: '20%', animationDuration: '3s' }}></div>
+        <div className="star" style={{ top: '30%', left: '50%', animationDuration: '4s' }}></div>
+        <div className="star" style={{ top: '50%', left: '70%', animationDuration: '5s' }}></div>
+        <div className="star" style={{ top: '80%', left: '30%', animationDuration: '6s' }}></div>
+        <div className="star" style={{ top: '90%', left: '90%', animationDuration: '7s' }}></div>
+        <div className="star" style={{ top: '60%', left: '40%', animationDuration: '4.5s' }}></div>
+        <div className="star" style={{ top: '15%', left: '10%', animationDuration: '5.5s' }}></div>
+        <div className="star" style={{ top: '25%', left: '80%', animationDuration: '3.2s' }}></div>
+        <div className="star" style={{ top: '75%', left: '60%', animationDuration: '6.8s' }}></div>
+
+        <div className="planet-saturn">
+            <div className="kerikil kerikil-orbit-1"></div>
+            <div className="kerikil kerikil-orbit-2"></div>
+            <div className="kerikil kerikil-orbit-1" style={{ animationDuration: '6s' }}></div>
+            <div className="kerikil kerikil-orbit-2" style={{ animationDuration: '8s' }}></div>
+        </div>
+
+
         <div className="flex-1 text-center md:text-left z-[1]">
-            <div className="text-container">
-                    <span className={`text-sm md:text-base text-blue-200 font-normal ${!showText ? 'hidden' : ''}`}>
-                    {currentText}
-                    </span>
-            </div>
+        
+        <div className="text-container" style={{ height: '2rem', overflow: 'hidden' }}>
+            <span className="text-sm md:text-base text-blue-200 font-normal transition-opacity duration-500">
+                {currentText}
+            </span>
+        </div>
 
         <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
         <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">

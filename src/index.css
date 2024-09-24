@@ -43,4 +43,157 @@
   border-radius: 15;
 }
 
+.text-container {
+  height: 2rem; /* Ganti dengan tinggi yang sesuai dengan ukuran teks Anda */
+  overflow: hidden; /* Menyembunyikan teks yang tidak terlihat */
+  transition: opacity 0.5s ease; /* Menambahkan efek transisi */
+}
+
+
+ 
+ @keyframes rotateRing {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes moveSaturn {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(100vw) translateY(10%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.planet-saturn {
+  position: absolute;
+  top: 30%;
+  left: -15%;
+  width: 20vw; /* Menggunakan viewport width */
+  height: 20vw; /* Menggunakan viewport width */
+  max-width: 250px; /* Batas maksimum untuk tampilan besar */
+  max-height: 250px; /* Batas maksimum untuk tampilan besar */
+  background-color: #f5a623;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  animation: moveSaturn 15s linear infinite;
+}
+
+.planet-saturn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40vw; /* Menggunakan viewport width */
+  height: 10vw; /* Menggunakan viewport width */
+  max-width: 400px; /* Batas maksimum untuk tampilan besar */
+  background-color: rgba(200, 200, 200, 0.2);
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: rotateRing 10s linear infinite; 
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(15vw) rotate(0deg); /* Menggunakan viewport width */
+  }
+  100% {
+    transform: rotate(360deg) translateX(15vw) rotate(-360deg); /* Menggunakan viewport width */
+  }
+}
+
+@keyframes orbitReverse {
+  0% {
+    transform: rotate(0deg) translateX(20vw) rotate(0deg); /* Menggunakan viewport width */
+  }
+  100% {
+    transform: rotate(-360deg) translateX(20vw) rotate(360deg); /* Menggunakan viewport width */
+  }
+}
+
+.kerikil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1vw; /* Menggunakan viewport width */
+  height: 1vw; /* Menggunakan viewport width */
+  max-width: 8px; /* Batas maksimum untuk tampilan besar */
+  max-height: 8px; /* Batas maksimum untuk tampilan besar */
+  background-color: #dcdcdc;
+  border-radius: 50%;
+}
+
+.kerikil-orbit-1 {
+  animation: orbit 5s linear infinite;
+}
+
+.kerikil-orbit-2 {
+  animation: orbitReverse 7s linear infinite;
+}
+
+/* Media Queries untuk penyesuaian lebih lanjut jika diperlukan */
+@media (max-width: 600px) {
+  .planet-saturn {
+    top: 20%; /* Menyesuaikan posisi pada layar kecil */
+  }
+
+  .kerikil {
+    width: 2vw; /* Ukuran lebih kecil di perangkat mobile */
+    height: 2vw;
+  }
+}
+
+
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid white;
+  transform: rotate(35deg);
+  opacity: 0.7;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star::before,
+.star::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid white;
+  top: -7px;
+  left: -5px;
+  transform: rotate(-35deg);
+}
+
+.star::after {
+  transform: rotate(70deg);
+}
+
+
 }
