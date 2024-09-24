@@ -43,19 +43,6 @@
   border-radius: 15;
 }
 
-.text-container {
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: opacity 0.5s ease-in-out; /* Transisi untuk efek yang lebih halus */
-}
-.text-container.hidden {
-  opacity: 0; /* Menyembunyikan teks */
-}
-
-
 
  
  
