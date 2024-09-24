@@ -44,9 +44,9 @@
 }
 
 .text-container {
-  height: 2rem; /* Ganti dengan tinggi yang sesuai dengan ukuran teks Anda */
-  overflow: hidden; /* Menyembunyikan teks yang tidak terlihat */
-  transition: opacity 0.5s ease; /* Menambahkan efek transisi */
+  height: 2rem;
+  overflow: hidden; 
+  transition: opacity 0.5s ease; 
 }
 
 
@@ -91,9 +91,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40vw; /* Menggunakan viewport width */
-  height: 10vw; /* Menggunakan viewport width */
-  max-width: 400px; /* Batas maksimum untuk tampilan besar */
+  width: 40vw; 
+  height: 10vw; 
+  max-width: 400px;
   background-color: rgba(200, 200, 200, 0.2);
   border: 5px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
@@ -104,19 +104,19 @@
 
 @keyframes orbit {
   0% {
-    transform: rotate(0deg) translateX(15vw) rotate(0deg); /* Menggunakan viewport width */
+    transform: rotate(0deg) translateX(15vw) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translateX(15vw) rotate(-360deg); /* Menggunakan viewport width */
+    transform: rotate(360deg) translateX(15vw) rotate(-360deg);
   }
 }
 
 @keyframes orbitReverse {
   0% {
-    transform: rotate(0deg) translateX(20vw) rotate(0deg); /* Menggunakan viewport width */
+    transform: rotate(0deg) translateX(20vw) rotate(0deg); 
   }
   100% {
-    transform: rotate(-360deg) translateX(20vw) rotate(360deg); /* Menggunakan viewport width */
+    transform: rotate(-360deg) translateX(20vw) rotate(360deg); 
   }
 }
 
@@ -124,10 +124,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1vw; /* Menggunakan viewport width */
-  height: 1vw; /* Menggunakan viewport width */
-  max-width: 8px; /* Batas maksimum untuk tampilan besar */
-  max-height: 8px; /* Batas maksimum untuk tampilan besar */
+  width: 1vw; 
+  height: 1vw; 
+  max-width: 8px; 
+  max-height: 8px; 
   background-color: #dcdcdc;
   border-radius: 50%;
 }
@@ -140,14 +140,14 @@
   animation: orbitReverse 7s linear infinite;
 }
 
-/* Media Queries untuk penyesuaian lebih lanjut jika diperlukan */
+
 @media (max-width: 600px) {
   .planet-saturn {
-    top: 20%; /* Menyesuaikan posisi pada layar kecil */
+    top: 20%; 
   }
 
   .kerikil {
-    width: 2vw; /* Ukuran lebih kecil di perangkat mobile */
+    width: 2vw; 
     height: 2vw;
   }
 }
