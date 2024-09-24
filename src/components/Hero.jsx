@@ -80,12 +80,13 @@ const Hero =() => {
 
         <div className="flex-1 text-center md:text-left z-[1]">
         
-        <div className="absolute inset-0 flex items-center justify-center min-h-[50px]">
+        <div className="flex items-center justify-center min-h-[50px]">
             <span
-                className={`text-sm md:text-base text-blue-200 font-normal transition-transform duration-300 ${
-                currentText ? 'opacity-100' : 'opacity-0'
-                }`}
-            >
+                className={`text-sm md:text-base text-blue-200 font-normal transition-opacity duration-300 ease-in-out ${
+                    currentText ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  style={{ height: '18px' }} // Atur tinggi tetap di sini
+                  >
                 {currentText}
             </span>
             </div>
@@ -98,7 +99,6 @@ const Hero =() => {
         </p>
         <button className="primary-btn">Contact Me</button>
       </div>
-
 
             <div className="flex gap-2 justify-center md:gap-3 lg:gap-5 z-[1]">
                 <div className="w-[403px] bg-gradient-to-br from-blue-950 to-slate-900 rounded-lg border border-blue-950 p-6">
