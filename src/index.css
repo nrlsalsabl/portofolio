@@ -46,7 +46,7 @@
 
  
  
-@keyframes rotateRing {
+ @keyframes rotateRing {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
   }
@@ -146,6 +146,19 @@
     height: 2vw;
   }
 }
+
+.text-container {
+  height: 50px; /* Tinggi tetap, sesuaikan dengan kebutuhan */
+  display: flex;
+  align-items: center; /* Pusatkan teks secara vertikal */
+  overflow: hidden; /* Sembunyikan teks yang meluap */
+  transition: opacity 0.5s ease-in-out; /* Tambahkan transisi untuk efek yang lebih halus */
+}
+
+.hidden {
+  opacity: 0; /* Untuk menyembunyikan teks sebelum mengganti */
+}
+
 
 
 
