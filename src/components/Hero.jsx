@@ -80,7 +80,7 @@ const Hero =() => {
 
 
         <div className="flex-1 text-center md:text-left z-[1]">
-                <span className="block h-10 text-sm md:text-base text-blue-200 font-normal overflow-hidden">
+                <span className="block min-h-10 h-10 text-sm md:text-base text-blue-200 font-normal overflow-hidden">
                 {currentText}
                 </span>
 
