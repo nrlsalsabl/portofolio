@@ -79,12 +79,11 @@ const Hero =() => {
 
 
         <div className="flex-1 text-center md:text-left z-[1]">
-        <div className="text-container">
-            <span className="text-sm md:text-base text-blue-200 font-normal">
+            <div className={`text-container ${!showText ? 'hidden' : ''}`}>
+                <span className="text-sm md:text-base text-blue-200 font-normal">
                 {currentText}
-            </span>
-        </div>
-
+                </span>
+            </div>
 
         <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
         <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">
