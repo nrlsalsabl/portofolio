@@ -80,11 +80,16 @@ const Hero =() => {
 
         <div className="flex-1 text-center md:text-left z-[1]">
         
-        <div className="flex items-center md:justify-center h-16">
-            <span className="h-6 text-sm md:text-base text-blue-200 font-normal whitespace-nowrap overflow-hidden">
+        <div className="flex items-center md:justify-center min-h-[50px]">
+            <span
+                className={`text-sm md:text-base text-blue-200 font-normal transition-transform duration-300 ${
+                currentText ? 'translate-y-0' : '-translate-y-6'
+                }`}
+            >
                 {currentText}
             </span>
             </div>
+
 
         
         <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
