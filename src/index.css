@@ -47,88 +47,70 @@
  
  
 body {
-  margin: 0; 
-  padding: 0 10%; 
-  overflow-x: hidden; 
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Menyembunyikan overflow horizontal */
 }
 
-@keyframes rotateRing {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+.container {
+  position: relative;
+  width: 100vw; /* Menggunakan lebar penuh viewport */
+  height: 100vh; /* Menggunakan tinggi penuh viewport */
+  overflow: hidden; /* Menghindari elemen keluar dari area ini */
 }
 
-@keyframes moveSaturn {
+.star {
+  position: absolute;
+  width: 10px; /* Atur ukuran bintang sesuai kebutuhan */
+  height: 10px; /* Atur ukuran bintang sesuai kebutuhan */
+  background-color: yellow; /* Warna bintang */
+  border-radius: 50%; /* Membuat bintang berbentuk bulat */
+  opacity: 0.7; /* Transparansi */
+  animation: twinkle 1.5s infinite alternate; /* Animasi berkilau */
+}
+
+@keyframes twinkle {
   0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(90vw) translateY(10%);
+    opacity: 0.7;
   }
   100% {
-    transform: translateX(0%);
+    opacity: 1;
   }
 }
 
 .planet-saturn {
   position: absolute;
   top: 30%;
-  left: 5%; /* Posisi yang lebih baik */
-  width: 20vw; 
-  height: 20vw; 
-  max-width: 250px; 
-  max-height: 250px; 
+  left: 50%;
+  transform: translateX(-50%); /* Pusatkan planet */
+  width: 20vw; /* Ukuran planet */
+  height: 20vw; /* Ukuran planet */
+  max-width: 250px; /* Batas maksimum ukuran */
+  max-height: 250px; /* Batas maksimum ukuran */
   background-color: #f5a623;
   border-radius: 50%;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  animation: moveSaturn 15s linear infinite;
+  animation: moveSaturn 15s linear infinite; /* Animasi planet */
 }
 
-.planet-saturn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40vw; 
-  height: 10vw; 
-  max-width: 400px; 
-  background-color: rgba(200, 200, 200, 0.2);
-  border: 5px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  animation: rotateRing 10s linear infinite; 
-}
-
-@keyframes orbit {
+@keyframes moveSaturn {
   0% {
-    transform: rotate(0deg) translateX(15vw) rotate(0deg); 
+    transform: translate(-50%, 0) translateX(-10%); /* Mulai sedikit ke kiri */
+  }
+  50% {
+    transform: translate(-50%, 0) translateX(10%); /* Bergerak sedikit ke kanan */
   }
   100% {
-    transform: rotate(360deg) translateX(15vw) rotate(-360deg); 
-  }
-}
-
-@keyframes orbitReverse {
-  0% {
-    transform: rotate(0deg) translateX(20vw) rotate(0deg); 
-  }
-  100% {
-    transform: rotate(-360deg) translateX(20vw) rotate(360deg); 
+    transform: translate(-50%, 0) translateX(-10%); /* Kembali ke posisi awal */
   }
 }
 
 .kerikil {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1vw; 
-  height: 1vw; 
-  max-width: 8px; 
-  max-height: 8px; 
+  width: 1vw; /* Ukuran kerikil */
+  height: 1vw; /* Ukuran kerikil */
+  max-width: 8px; /* Batas maksimum ukuran */
+  max-height: 8px; /* Batas maksimum ukuran */
   background-color: #dcdcdc;
   border-radius: 50%;
 }
@@ -141,17 +123,43 @@ body {
   animation: orbitReverse 7s linear infinite;
 }
 
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(15vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(15vw) rotate(-360deg);
+  }
+}
+
+@keyframes orbitReverse {
+  0% {
+    transform: rotate(0deg) translateX(20vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(20vw) rotate(360deg);
+  }
+}
+
+/* Media Queries untuk penyesuaian di layar kecil */
 @media (max-width: 600px) {
   .planet-saturn {
     top: 20%; 
-    left: 5%; 
+    left: 50%;
+    transform: translateX(-50%); /* Pastikan tetap di tengah */
+  }
+
+  .star {
+    width: 8px; /* Ukuran lebih kecil di perangkat mobile */
+    height: 8px;
   }
 
   .kerikil {
-    width: 2vw; 
+    width: 2vw; /* Ukuran kerikil lebih kecil di perangkat mobile */
     height: 2vw;
   }
 }
+
 
 
 
