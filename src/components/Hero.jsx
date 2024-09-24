@@ -59,27 +59,6 @@ const Hero =() => {
     return (
         <section className="max-w-screen-xl flex flex-col gap-14 md:flex-row md:items-center pt-16 md:pt-28 pb-20 px-6 mx-auto" id="hero">
 
-
-            <div class="container">
-            <div class="star" style="top: 10%; left: 20%; animation-duration: 3s;"></div>
-            <div class="star" style="top: 30%; left: 50%; animation-duration: 4s;"></div>
-            <div class="star" style="top: 50%; left: 70%; animation-duration: 5s;"></div>
-            <div class="star" style="top: 80%; left: 30%; animation-duration: 6s;"></div>
-            <div class="star" style="top: 90%; left: 90%; animation-duration: 7s;"></div>
-            <div class="star" style="top: 60%; left: 40%; animation-duration: 4.5s;"></div>
-            <div class="star" style="top: 15%; left: 10%; animation-duration: 5.5s;"></div>
-            <div class="star" style="top: 25%; left: 80%; animation-duration: 3.2s;"></div>
-            <div class="star" style="top: 75%; left: 60%; animation-duration: 6.8s;"></div>
-
-            <div class="planet-saturn">
-                <div class="kerikil kerikil-orbit-1"></div>
-                <div class="kerikil kerikil-orbit-2"></div>
-                <div class="kerikil kerikil-orbit-1" style="animation-duration: 6s;"></div>
-                <div class="kerikil kerikil-orbit-2" style="animation-duration: 8s;"></div>
-            </div>
-            </div>
-
-
         <div className="flex-1 text-center md:text-left z-[1]">
             <div className="text-container">
                     <span className={`text-sm md:text-base text-blue-200 font-normal ${!showText ? 'hidden' : ''}`}>
