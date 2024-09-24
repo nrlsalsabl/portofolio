@@ -49,59 +49,45 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Menyembunyikan overflow horizontal */
+  overflow: hidden; /* Menyembunyikan overflow agar tidak ada scroll */
 }
 
 .container {
-  position: relative;
-  width: 100vw; /* Menggunakan lebar penuh viewport */
-  height: 100vh; /* Menggunakan tinggi penuh viewport */
-  overflow: hidden; /* Menghindari elemen keluar dari area ini */
+  position: relative; /* Memungkinkan posisi absolute untuk anak */
+  width: 100vw; /* Lebar penuh viewport */
+  height: 100vh; /* Tinggi penuh viewport */
+  background-color: #000; /* Latar belakang gelap untuk bintang */
 }
 
 .star {
   position: absolute;
-  width: 10px; /* Atur ukuran bintang sesuai kebutuhan */
-  height: 10px; /* Atur ukuran bintang sesuai kebutuhan */
+  width: 10px; /* Ukuran bintang */
+  height: 10px; /* Ukuran bintang */
   background-color: yellow; /* Warna bintang */
   border-radius: 50%; /* Membuat bintang berbentuk bulat */
-  opacity: 0.7; /* Transparansi */
-  animation: twinkle 1.5s infinite alternate; /* Animasi berkilau */
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .planet-saturn {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%); /* Pusatkan planet */
+  top: 50%; /* Pusat vertikal */
+  left: 50%; /* Pusat horizontal */
+  transform: translate(-50%, -50%); /* Memastikan planet berada di tengah */
   width: 20vw; /* Ukuran planet */
   height: 20vw; /* Ukuran planet */
-  max-width: 250px; /* Batas maksimum ukuran */
-  max-height: 250px; /* Batas maksimum ukuran */
+  max-width: 250px; /* Batas maksimum untuk tampilan besar */
+  max-height: 250px; /* Batas maksimum untuk tampilan besar */
   background-color: #f5a623;
   border-radius: 50%;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  animation: moveSaturn 15s linear infinite; /* Animasi planet */
+  animation: rotatePlanet 10s linear infinite; /* Animasi rotasi planet */
 }
 
-@keyframes moveSaturn {
+@keyframes rotatePlanet {
   0% {
-    transform: translate(-50%, 0) translateX(-10%); /* Mulai sedikit ke kiri */
-  }
-  50% {
-    transform: translate(-50%, 0) translateX(10%); /* Bergerak sedikit ke kanan */
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-    transform: translate(-50%, 0) translateX(-10%); /* Kembali ke posisi awal */
+    transform: translate(-50%, -50%) rotate(360deg); /* Rotasi penuh */
   }
 }
 
@@ -109,18 +95,18 @@ body {
   position: absolute;
   width: 1vw; /* Ukuran kerikil */
   height: 1vw; /* Ukuran kerikil */
-  max-width: 8px; /* Batas maksimum ukuran */
-  max-height: 8px; /* Batas maksimum ukuran */
+  max-width: 8px; /* Batas maksimum ukuran kerikil */
+  max-height: 8px; /* Batas maksimum ukuran kerikil */
   background-color: #dcdcdc;
   border-radius: 50%;
 }
 
 .kerikil-orbit-1 {
-  animation: orbit 5s linear infinite;
+  animation: orbit 5s linear infinite; /* Orbit 1 */
 }
 
 .kerikil-orbit-2 {
-  animation: orbitReverse 7s linear infinite;
+  animation: orbitReverse 7s linear infinite; /* Orbit 2 */
 }
 
 @keyframes orbit {
@@ -128,7 +114,7 @@ body {
     transform: rotate(0deg) translateX(15vw) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translateX(15vw) rotate(-360deg);
+    transform: rotate(360deg) translateX(15vw) rotate(0deg);
   }
 }
 
@@ -137,28 +123,28 @@ body {
     transform: rotate(0deg) translateX(20vw) rotate(0deg);
   }
   100% {
-    transform: rotate(-360deg) translateX(20vw) rotate(360deg);
+    transform: rotate(-360deg) translateX(20vw) rotate(0deg);
   }
 }
 
 /* Media Queries untuk penyesuaian di layar kecil */
 @media (max-width: 600px) {
   .planet-saturn {
-    top: 20%; 
-    left: 50%;
-    transform: translateX(-50%); /* Pastikan tetap di tengah */
+    width: 30vw; /* Ukuran lebih besar di perangkat mobile */
+    height: 30vw; /* Ukuran lebih besar di perangkat mobile */
   }
 
   .star {
-    width: 8px; /* Ukuran lebih kecil di perangkat mobile */
-    height: 8px;
+    width: 5px; /* Ukuran bintang lebih kecil di perangkat mobile */
+    height: 5px; /* Ukuran bintang lebih kecil di perangkat mobile */
   }
 
   .kerikil {
     width: 2vw; /* Ukuran kerikil lebih kecil di perangkat mobile */
-    height: 2vw;
+    height: 2vw; /* Ukuran kerikil lebih kecil di perangkat mobile */
   }
 }
+
 
 
 
