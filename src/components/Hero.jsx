@@ -80,10 +80,10 @@ const Hero =() => {
 
         <div className="flex-1 text-center md:text-left z-[1]">
         
-        <div className="flex items-center md:justify-center min-h-[50px]">
+        <div className="absolute inset-0 flex items-center justify-center min-h-[50px]">
             <span
                 className={`text-sm md:text-base text-blue-200 font-normal transition-transform duration-300 ${
-                currentText ? 'translate-y-0' : '-translate-y-6'
+                currentText ? 'opacity-100' : 'opacity-0'
                 }`}
             >
                 {currentText}
