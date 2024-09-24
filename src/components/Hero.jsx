@@ -80,10 +80,12 @@ const Hero =() => {
 
 
         <div className="flex-1 text-center md:text-left z-[1]">
-                <span className="block min-h-10 h-10 text-sm md:text-base text-blue-200 font-normal overflow-hidden">
-                {currentText}
-                </span>
-
+                
+        <div className="relative flex items-center justify-center h-10">
+            <span className="block min-h-10 h-10 text-sm md:text-base text-blue-200 font-normal overflow-hidden">
+            {currentText}
+            </span>
+        </div>
 
         <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
         <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">
