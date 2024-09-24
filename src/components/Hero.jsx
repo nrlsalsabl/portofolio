@@ -78,27 +78,25 @@ const Hero =() => {
         </div>
 
 
-        <div className="flex-1 text-center md:text-left z-[1]">
-        
-        <div className="flex items-center justify-center min-h-[50px]">
-            <span
-                className={`text-sm md:text-base text-blue-200 font-normal transition-opacity duration-300 ease-in-out ${
-                    currentText ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  style={{ height: '18px' }} // Atur tinggi tetap di sini
-                  >
-                {currentText}
-            </span>
-            </div>
+        <div className="flex-1 text-center md:text-left z-[1] relative">
+  <div className="relative flex items-center justify-center min-h-[50px]">
+    <span
+      className={`absolute text-sm md:text-base text-blue-200 font-normal transition-opacity duration-300 ease-in-out ${
+        currentText ? 'opacity-100' : 'opacity-0'
+      }`}
+      style={{ height: '18px' }} // Tetap pada tinggi ini
+    >
+      {currentText}
+    </span>
+  </div>
 
+  <h2 className="text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
+  <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">
+    {tagLine}
+  </p>
+  <button className="primary-btn">Contact Me</button>
+</div>
 
-        
-        <h2 className=" text-3xl mt-3 md:text-5xl md:mt-5">{name} 👋</h2>
-        <p className="w-full text-xs font-light text-neutral-50 leading-5 my-6 lg:w-[38vw] md:text-sm md:leading-6 md:my-8">
-          {tagLine}
-        </p>
-        <button className="primary-btn">Contact Me</button>
-      </div>
 
             <div className="flex gap-2 justify-center md:gap-3 lg:gap-5 z-[1]">
                 <div className="w-[403px] bg-gradient-to-br from-blue-950 to-slate-900 rounded-lg border border-blue-950 p-6">
